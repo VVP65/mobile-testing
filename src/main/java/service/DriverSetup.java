@@ -14,7 +14,7 @@ public class DriverSetup {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "emulator-5554");
         capabilities.setCapability("platformName", "Android");
-        File appDir = new File("C:\\Users\\Volodymyr_Protsiv\\Desktop\\JavaMentoringProgram\\M15_Automated Testing of Mobile Applications with Java\\mobile-testing\\src\\main\\resources");
+        File appDir = new File("src\\main\\resources");
         File app = new File(appDir, "ContactManager.apk");
         capabilities.setCapability("app", app.getAbsolutePath());
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
