@@ -13,14 +13,14 @@ public class DriverSetup {
     private  static String DEVICE_NAME = "emulator-5554";
     private  static String PLATFORM_NAME = "Android";
     private  static String HOST_URL = "http://127.0.0.1:4723/wd/hub";
-    private  static String APPLICATION_APK_FILE = "ContactManager.apk";
+    private  static String APPLICATION_APK_FILE_NAME= "ContactManager.apk";
 
 
     protected static void prepareDriverNative() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", DEVICE_NAME);
         capabilities.setCapability("platformName", PLATFORM_NAME);
-        File app = new File(APPLICATION_PATH, APPLICATION_APK_FILE);
+        File app = new File(APPLICATION_PATH, APPLICATION_APK_FILE_NAME);
         capabilities.setCapability("app", app.getAbsolutePath());
         driver = new AndroidDriver(new URL(HOST_URL), capabilities);
     }
