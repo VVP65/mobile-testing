@@ -9,14 +9,19 @@ import java.net.URL;
 
 public class DriverSetup {
     protected static AndroidDriver driver;
+    private  static String APPLICATION_PATH = "src\\main\\resources";
+    private  static String DEVICE_NAME = "emulator-5554";
+    private  static String PLATFORM_NAME = "Android";
+    private  static String HOST_URL = "http://127.0.0.1:4723/wd/hub";
+    private  static String APPLICATION_APK_FILE = "ContactManager.apk";
+
 
     protected static void prepareDriverNative() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "emulator-5554");
-        capabilities.setCapability("platformName", "Android");
-        File appDir = new File("src\\main\\resources");
-        File app = new File(appDir, "ContactManager.apk");
+        capabilities.setCapability("deviceName", DEVICE_NAME);
+        capabilities.setCapability("platformName", PLATFORM_NAME);
+        File app = new File(APPLICATION_PATH, APPLICATION_APK_FILE);
         capabilities.setCapability("app", app.getAbsolutePath());
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        driver = new AndroidDriver(new URL(HOST_URL), capabilities);
     }
 }

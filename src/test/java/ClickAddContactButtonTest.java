@@ -11,7 +11,7 @@ public class ClickAddContactButtonTest extends DriverSetup {
     }
 
     @Test
-    public void clickAddContactButtonCheck() throws InterruptedException {
+    public void clickAddContactButtonCheck() {
         String applicationPackageName = "com.example.android.contactmanager:id/";
         By addButton = By.id(applicationPackageName + "addContactButton");
         driver.findElement(addButton).click();
@@ -20,7 +20,7 @@ public class ClickAddContactButtonTest extends DriverSetup {
     }
 
     @AfterClass
-    public static void tearDown() throws Exception {
+    public static void tearDown() {
         driver.quit();
     }
 }
